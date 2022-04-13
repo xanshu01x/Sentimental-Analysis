@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Is it?</title>
+</head>
+<body>
+	<div align="center" width="40%" style="margin-top: 80px">
+		<p>Your review is: {{ review }}</p>
+	{% if pic is 1 %}
+		<img src="{% static 'happy.jpg' %}",  width="200", height="200"/>
+	{% endif %}
+
+	{% if pic is 2 %}
+		<img src="{% static 'sad.png' %}",  width="200", height="200"/>
+	{% endif %}
+
+	<!-- <br>Is that what you think about the movie???
+	<form method="post" action="{% url 'thanks' %}">
+		{% csrf_token %}
+		<input type="submit" name="yes" value="Ofcourse">
+		<input type="submit" name="no" value="Aw hell no!!">
+	</form> -->
+	<br><br>
+	<a href="{% url 'start' %}">Give another review</a>
+	</div>
+</body>
+</html>

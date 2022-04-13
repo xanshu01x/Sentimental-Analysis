@@ -1,0 +1,18 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Review Taker</title>
+</head>
+<body>
+	<div align="center" width="40%" style="margin-top: 80px">
+	Hey, have you seen any movie in last few days?? Give your reviews!!!<br><br><br>
+	<form method="post" action="{% url 'confirm' %}">
+		{% csrf_token %}
+		Enter the review: <input type="text" name="mytext">
+		<input type="submit" name="submit" value="Analyze it">
+	</form>
+	</div>
+</body>
+</html>
